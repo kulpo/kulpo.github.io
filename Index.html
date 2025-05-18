@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIMA BA3 Exam Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            color: #2c5282;
+            margin-top: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eaeaea;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .options {
+            margin-top: 10px;
+        }
+        .option {
+            display: block;
+            margin-bottom: 8px;
+            margin-left: 20px;
+        }
+        input[type="checkbox"], input[type="checkbox"] {
+            margin-right: 10px;
+            width: 16px;
+            height: 16px;
+            accent-color: #2c5282;
+        }
+        .finish-btn {
+            display: block;
+            margin: 30px auto;
+            padding: 15px 30px;
+            background-color: #38a169;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+        }
+        .finish-btn:hover {
+            background-color: #2f855a;
+        }
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .chapter-nav a {
+            margin: 5px;
+            padding: 8px 12px;
+            background-color: #e2e8f0;
+            color: #2d3748;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .chapter-nav a:hover {
+            background-color: #cbd5e0;
+        }
+        .chapter-section {
+            display: none;
+        }
+        .chapter-section.active {
+            display: block;
+        }
+        .draggable {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #e2e8f0;
+            border: 1px solid #ccc;
+            cursor: move;
+            margin: 5px;
+        }
+        .droppable {
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            border: 2px dashed #ccc;
+            margin: 0 5px;
+            vertical-align: middle;
+            text-align: center;
+            line-height: 30px;
+        }
+        .droppable.filled {
+            border: 2px solid #38a169;
+        }
+        .instructions {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .non-selectable {
+            margin-left: 20px;
+            margin-bottom: 8px;
+        }
+        .gap-fill {
+            width: 100px;
+            padding: 5px;
+            margin: 0 5px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            vertical-align: middle;
+        }
+        .gap-fill:focus {
+            border-color: #38a169;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>CIMA BA3 Exam Quiz</h1>
+    <div class="chapter-nav">
+        <a onclick="showChapter('content://media/external/file/1000611141')">Chapter 1</a>
+        <a onclick="showChapter('chapter2')">Chapter 2</a>
+        <a onclick="showChapter('chapter3')">Chapter 3</a>
+        <a onclick="showChapter('chapter4')">Chapter 4</a>
+        <a onclick="showChapter('chapter5')">Chapter 5</a>
+    </div>
+    <form id="quizForm" action="results.html" method="GET">
+        <!-- Chapter 2 -->
+        <div id="chapter2" class="chapter-section active">
+            <h2>Chapter 2: An Introduction to Final Accounts</h2>
+            <div class="question" id="q16">
+                <p><strong>Question 1:</strong> A sole trader borrows $10,000 from a bank. Which elements of the accounting equation will change due to this transaction?</p>
+                <div class="options">
+                    <label class="option"><input type="checkbox" name="q16" value="A"> Assets and liabilities</label>
+                    <label class="option"><input type="checkbox" name="q16" value="B"> Assets and capital</label>
+                    <label class="option"><input type="checkbox" name="q16" value="C"> Capital and liabilities</label>
+                    <label class="option"><input type="checkbox" name="q16" value="D"> Assets only</label>
+                </div>
+            </div>
+            <div class="question" id="q17">
+                <p><strong>Question 2:</strong> A sole trader sells goods for cash for $500 which had cost $300. Which elements of the accounting equation will change due to this transaction?</p>
+                <div class="options">
+                    <label class="option"><input type="checkbox" name="q17" value="A"> Assets and liabilities</label>
+                    <label class="option"><input type="checkbox" name="q17" value="B"> Assets and capital</label>
+                    <label class="option"><input type="checkbox" name="q17" value="C"> Capital and liabilities</label>
+                    <label class="option"><input type="checkbox" name="q17" value="D"> Assets only</label>
+                </div>
+            </div>
+            <div class="question" id="q18">
+                <p><strong>Question 3:</strong> A sole trader increases the number of company motor vehicles by adding his own car to its fleet. Which elements of the accounting equation will change due to this transaction?</p>
+                <div class="options">
+                    <label class="option"><input type="checkbox" name="q18" value="A"> Assets only</label>
+                    <label class="option"><input type="checkbox" name="q18" value="B"> Capital only</label>
+                    <label class="option"><input type="checkbox" name="q18" value="C"> Assets and capital</label>
+                    <label class="option"><input type="checkbox" name="q18" value="D"> Assets and liabilities</label>
+                </div>
+            </div>
+            <div class="question" id="q19">
+                <p><strong>Question 4:</strong> The profit made by a business in 20X7 was $35,400. The proprietor injected new capital of $10,200 during the year and withdrew a monthly salary of $500. If net assets at the end of 20X7 were $95,100, what was the proprietor's capital at the beginning of the year?</p>
+                <div class="options">
+                    <label class="option"><input type="checkbox" name="q19" value="A"> $50,000</label>
+                    <label class="option"><input type="checkbox" name="q19" value="B"> $55,500</label>
+                    <label class="option"><input type="checkbox" name="q19" value="C"> $63,900</label>
+                    <label class="option"><input type="checkbox" name="q19" value="D"> $134,700</label>
+                </div>
+            </div>
+            <div class="question" id="q20">
+                <p><strong>Question 5:</strong> Which one of the following can the accounting equation be rewritten as?</p>
+                <div class="options">
+                    <label class="option"><input type="checkbox" name="q20" value="A"> Assets + profit - drawings - liabilities = closing capital</label>
+                    <label class="option"><input type="checkbox" name="q20" value="B"> Assets - liabilities - drawings = opening capital + profit</label>
+                    <label class="option"><input type="checkbox" name="q20" value="C"> Assets - liabilities - opening capital + drawings = profit</label>
+                    <label class="option"><input type="checkbox" name="q20" value="D"> Assets - profit - drawings = closing capital - liabilities</label>
+                </div>
+            </div>
+            <div class="question" id="q21">
+                <p><strong>Question 6:</strong> A business had net assets at 1 January and 31 December 20X9 of $75,600 and $73,800 respectively. During the year, the proprietor introduced additional capital of $17,700 and withdrew cash and goods to the value of $16,300. What was the profit or loss made by the business in 20X9?</p>
+                <div class="options">
+                    <label class="option"><input type="checkbox" name="q21" value="A"> $3,200 loss</label>
+                    <label class="option"><input type="checkbox" name="q21" value="B"> $3,200 profit</label>
+                    <label class="option"><input type="checkbox" name="q21" value="C"> $400 loss</label>
+                    <label class="option"><input type="checkbox" name="q21" value="D"> $400 profit</label>
+                </div>
+            </div>
+            <div class="question" id="q22">
+                <p><strong>Question 7:</strong> The accounting equation can be written as:</p>
+                <div class="options">
+                    <label class="option"><input type="checkbox" name="q22" value="A"> Assets + profits - drawings - liabilities = closing capital</label>
+                    <label class="option"><input type="checkbox" name="q22" value="B"> Assets - liabilities - drawings = opening capital + profit</label>
+                    <label class="option"><input type="checkbox" name="q22" value="C"> Assets - liabilities - opening capital + drawings = profit</label>
+                    <label class="option"><input type="checkbox" name="q22" value="D"> Opening capital + profit - drawings - liabilities = assets</label>
+                </div>
+            </div>
+            <div class="question" id="q23">
+                <p><strong>Question 8:</strong> The capital of a sole trader would change as a result of:</p>
+                <div class="options">
+                    <label class="option"><input type="checkbox" name="q23" value="A"> A credit customer paying by cheque</label>
+                    <label class="option"><input type="checkbox" name="q23" value="B"> Raw materials being purchased on credit</label>
+                    <label class="option"><input type="checkbox" name="q23" value="C"> Non-current assets being purchased on credit</label>
+                    <label class="option"><input type="checkbox" name="q23" value="D"> Personal petrol being paid for out of company petty cash</label>
+                </div>
+            </div>
+            <div class="question" id="q24">
+                <p><strong>Question 9:</strong> Which one of the following can the accounting equation be rewritten as?</p>
+                <div class="options">
+                    <label class="option"><input type="checkbox" name="q24" value="A"> Assets + profit - drawings - liabilities = closing capital</label>
+                    <label class="option"><input type="checkbox" name="q24" value="B"> Assets - liabilities - drawings = opening capital + profit</label>
+                    <label class="option"><input type="checkbox" name="q24" value="C"> Assets - liabilities - opening capital + drawings = profit</label>
+                    <label class="option"><input type="checkbox" name="q24" value="D"> Assets - profit - drawings = closing capital - liabilities</label>
+                </div>
+            </div>
+            <div class="question" id="q25">
+                <p><strong>Question 10:</strong> The profit earned by a business in 20X7 was $72,500. The proprietor injected new capital of $8,000 during the year and withdrew goods for his private use which had cost $2,200. If net assets at the beginning of 20X7 were $101,700, what were the closing net assets?</p>
+                <div class="options">
+                    <label class="option"><input type="checkbox" name="q25" value="A"> $35,000</label>
+                    <label class="option"><input type="checkbox" name="q25" value="B"> $39,400</label>
+                    <label class="option"><input type="checkbox" name="q25" value="C"> $168,400</label>
+                    <label class="option"><input type="checkbox" name="q25" value="D"> $180,000</label>
+                </div>
+            </div>
+            <div class="question" id="q26">
+                <p><strong>Question 11:</strong> A sole trader is $5,000 overdrawn at her bank and receives $1,000 from a credit customer in respect of its account. Which elements of the accounting equation will change due to this transaction?</p>
+                <div class="options">
+                    <label class="option"><input type="checkbox" name="q26" value="A"> Assets and liabilities only</label>
+                    <label class="option"><input type="checkbox" name="q26" value="B"> Liabilities only</label>
+                    <label class="option"><input type="checkbox" name="q26" value="C"> Assets only</label>
+                    <label class="option"><input type="checkbox" name="q26" value="D"> Assets, liabilities and capital</label>
+                </div>
+            </div>
+            <div class="question" id="q27">
+                <p><strong>Question 12:</strong> A sole trader purchases goods on credit. Which elements of the accounting equation will change due to this transaction?</p>
+                <div class="options">
+                    <label class="option"><input type="checkbox" name="q27" value="A"> Assets and liabilities</label>
+                    <label class="option"><input type="checkbox" name="q27" value="B"> Assets and capital</label>
+                    <label class="option"><input type="checkbox" name="q27" value="C"> Capital and liabilities</label>
+                    <label class="option"><input type="checkbox" name="q27" value="D"> Assets only</label>
+                </div>
+            </div>
+            <div class="question" id="q28">
+                <p><strong>Question 13:</strong> Which of the following items should be classified as capital expenditure?</p>
+                <p>Purchase of a 3D printer<br>Repairing a broken window<br>Extension of the office building<br>Purchase of computer hardware<br>Purchase of ink for printers</p>
+                <div class="options multi-select">
+                    <label class="option"><input type="checkbox" name="q28" value="A"> Purchase of a 3D printer</label>
+                    <label class="option"><input type="checkbox" name="q28" value="B"> Repairing a broken window</label>
+                    <label class="option"><input type="checkbox" name="q28" value="C"> Extension of the office building</label>
+                    <label class="option"><input type="checkbox" name="q28" value="D"> Purchase of computer hardware</label>
+                    <label class="option"><input type="checkbox" name="q28" value="E"> Purchase of ink for printers</label>
+                </div>
+            </div>
+            <div class="question" id="q29">
+                <p><strong>Question 14:</strong> In which of the following categories of the statement of financial position should the capital expenditure items above be included?</p>
+                <div class="options">
+                    <label class="option"><input type="checkbox" name="q29" value="A"> Current assets</label>
+                    <label class="option"><input type="checkbox" name="q29" value="B"> Non-current assets</label>
+                    <label class="option"><input type="checkbox" name="q29" value="C"> Capital</label>
+                    <label class="option"><input type="checkbox" name="q29" value="D"> Retained earnings</label>
+                </div>
+            </div>
+            <div class="question" id="q30">
+                <p><strong>Question 15:</strong> What other ledger account will be affected by the capital expenditure purchases in April 20X1?</p>
+                <div class="options">
+                    <label class="option"><input type="checkbox" name="q30" value="A"> Trade receivables</label>
+                    <label class="option"><input type="checkbox" name="q30" value="B"> Trade payables</label>
+                    <label class="option"><input type="checkbox" name="q30" value="C"> Bank</label>
+                    <label class="option"><input type="checkbox" name="q30" value="D"> Revenue</label>
+                </div>
+            </div>
+        </div>
